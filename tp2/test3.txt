@@ -1,0 +1,6 @@
+{
+	read N;
+	estImpaire = N % 5;
+	print estImpaire;
+	print N;
+}

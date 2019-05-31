@@ -1,0 +1,14 @@
+{
+	read N;
+	print N;
+	while (N > 1) {
+			estImpaire = N % 2;
+			if (estImpaire){
+				N =  3 * N;
+				N = N + 1;
+			}else{
+				N = N / 2;
+			} 
+			print N;
+	}
+}
