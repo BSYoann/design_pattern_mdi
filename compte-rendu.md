@@ -37,20 +37,26 @@ Après étude du diagramme de classe initialement conçue, nous avons détecté 
 
 Après quelques corrections, voici le diagramme de place :
 
-![Diagramme de classe Gotham Pizzas après correction](uml/Gotham_Pizzas_UML.jpeg)
+![Diagramme de classe Gotham Pizzas après correction](uml/Gotham_Pizzas_UML.jpeg?raw=true)
 
 ### Question 2 : Le design pattern decorator pour changer le prix d'une commande
 
 Voici à quoi le diagramme UML ressemble si l'on implémente le design pattern decorator :
 
-![Diagramme de classe Gotham Pizzas avec design pattern decorator](uml/Gotham_Pizzas_Retard_UML.jpeg)
+![Diagramme de classe Gotham Pizzas avec design pattern decorator](uml/Gotham_Pizzas_Retard_UML.jpeg?raw=true)
 
 S'il n'y a aucun retard, on prend le prix de la client Prix. Sinon on prend le prix de la classe PrixEnRetard qui fera le calcul en fonction du prix normal. On pourrait ajouter d'autre prix modifié qui hérite donc du décorateur 'PrixModifié'. Ce serait le cas si l'on voudrait faire un prix happy hours, on créer une classe PrixHappyHours qui hérite de Prix modifié et qui donne le prix de la commande à 50%.
 
-### Question 2 : Le design pattern state
+### Question 3 : Le design pattern state
 
-![Diagramme de classe State](uml/State_UML.jpeg)
+Jusqu'ici la classe Commande avait la possibilité d'appeler ces opérations dans n'importe quel ordre. Or l'ordre a une importance puisque qu'on ne peut pas 'Emportée' une commande s'il elle n'a pas été préparée avant.
+
+Le design pattern State nous permet d'avoir un ordre définie, un état définie lequel est l'état suivant. Voici le diagramme de classe UML :
+
+![Diagramme de classe State](uml/State_UML.jpeg?raw=true)
+
+Chaque étape change l'état de la commande quand celle-ci est finie. On aura donc DemarragePreparation -> FinPreparation -> Emportee -> Livree.
 
 ## V. Conclusion
 
-Ces différents exercice nous on permis de découvrir certains design pattern dans des exemples concrets.
+Ces différents exercice nous on permis de découvrir certains design pattern dans des exemples concrets. Cela permet d'être plus modulable et plus flexible si l'on veut rajouter des fonctionnalités au système (sans eux il faudrait souvent revoir toute l'architecture du système).
